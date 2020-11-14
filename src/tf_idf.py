@@ -22,7 +22,7 @@ y_train = df_train.author
 X_test = vectorizer.transform(df_test['text'].values.tolist())
 y_test = df_test.author
 
-clf = LogisticRegression(random_state=0).fit(X_train, y_train)
+clf = LogisticRegression(random_state=0,max_iter=1000).fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
 class_names = ['EAP','HPL','MWS']
